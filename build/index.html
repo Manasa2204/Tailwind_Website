@@ -1,293 +1,600 @@
 <!doctype html>
 <html lang="en" class="sm:scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link href="css/style.css" rel="stylesheet" />
-    <script src="js/main.js" defer></script>
-  </head>
 
-  <body class="min-h-screen bg-slate-100 dark:bg-black dark:text">
-    <header class="bg-teal-700 text-white sticky top-0 z-10">
-      <section class="max-w-4xl mx-auto p-4 flex justify-between items-center">
-        <h1 class="text-4xl font-medium"><a href="#hero">Acme Rockets</a></h1>
-        <div>
-          <button
-            class="text-3xl md:hidden cursor-pointer relative w-8 h-8"
-            id="hamburger-button"
-          >
-            <!-- &#9776; -->
-            <div
-              class="bg-white w-8 h-1 rounded absolute top-4 -mt-0.5 before:content-[''] transition-all duration-500 before:bg-white before:w-8 before:h-1 before:rounded before:absolute before:-translate-x-4 before:-translate-y-3 before:transition-all before:duration-500 after:content-[''] after:bg-white after:w-8 after:h-1 after:rounded after:absolute after:transition-all after:duration-500 after:-translate-x-4 after:translate-y-3"
-            ></div>
-          </button>
-          <nav class="hidden md:block space-x-8 text-xl" arial-label="main">
-            <a href="#rockets" class="hover:opacity-90">Our Rockets</a>
-            <a href="#testimonials" class="hover:opacity-90">Testimonials</a>
-            <a href="#contact" class="hover:opacity-90">Contact us</a>
-          </nav>
-        </div>
-      </section>
-      <section
-        id="mobile-menu"
-        class="absolute top-68 bg-black w-full text-5xl flex-col justify-content-center origin-top animate-open-menu hidden"
-      >
-        <nav
-          class="flex flex-col min-h-screen item-center py-8"
-          aria-label="mobile"
-        >
-          <a href="#hero" class="w-full text-center py-6 hover:opacity-90"
-            >Home</a
-          >
-          <a href="#rockets" class="w-full text-center py-6 hover:opacity-90"
-            >Our Rockets</a
-          >
-          <a
-            href="#testimonials"
-            class="w-full text-center py-6 hover:opacity-90"
-            >Testimonials</a
-          >
-          <a href="#contact" class="w-full text-center py-6 hover:opacity-90"
-            >Contact us</a
-          >
-          <a href="#footer" class="w-full text-center py-6 hover:opacity-90"
-            >Legal</a
-          >
-        </nav>
-      </section>
-    </header>
-    <main class="max-w-4xl mx-auto">
-      <section
-        id="hero"
-        class="scroll-mt-40 flex flex-col-reverse justify-center sm:flex-row p-6 items-center gap-8 mb-12"
-      >
-        <article class="sm:w-1/2">
-          <h2
-            class="max-w-md text-4xl font-bold text-center sm:text-5xl sm:text-left text-slate-900 dark:text-white"
-          >
-            We boldly go
-            <span class="text-indigo-700 dark:text-indigo-300"
-              >where no rocket</span
-            >
-            has gone before
-          </h2>
-          <p
-            class="max-w-md text-2xl mt-4 text-center sm:text-left text-slate-900 dark:text-white"
-          >
-            We're building rockets for the next century today. From the moon to
-            Mars, Jupiter and beyond.
-          </p>
-          <p
-            class="max-w-md text-2xl mt-4 text-center sm:text-left text-slate-900 dark:text-white"
-          >
-            Think Acme rockets
-          </p>
-        </article>
-        <img class="w-1/2" src="img/rocketdab.png" />
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medquest</title>
+  <link href="css/style.css" rel="stylesheet" />
+  <script src="js/main.js" defer></script>
+  <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://unpkg.com/alpinejs" defer></script>
+  <link rel="icon" href="./img/image.png" class="w-[20px] h-[20px]" />
+</head>
 
-      <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
-
-      <section id="rockets" class="p-6 my-12 scroll-mt-20">
-        <h2
-          class="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white"
-        >
-          Our Rockets
-        </h2>
-        <ul
-          class="list-none mx-auto my-12 flex flex-col sm:flex-row items-center gap-8"
-        >
-          <li
-            class="w-2/3 sm:w-5/6 flex flex-col items-center border border-solid border-slate-900 dark:bg-black dark:border-gray-100 bg-white py-6 px-2 rounded-3xl shadow-xl"
-          >
-            <img src="img/rocketman.png" class="w-1/2 mb-6" />
-            <h3 class="text-3xl text-slate-900 dark:text-white">Explorer</h3>
-            <p
-              class="hidden sm:block text-3xl mt-2 text-slate-500 dark:text-slate-400"
-            >
-              $
-            </p>
-            <p
-              class="sm:hidden text-2xl mt-2 text-slate-500 dark:text-slate-400"
-            >
-              Affordable Exploration
-            </p>
-          </li>
-          <li
-            class="w-2/3 sm:w-5/6 flex flex-col items-center border border-solid border-slate-900 dark:bg-black dark:border-gray-100 bg-white py-6 px-2 rounded-3xl shadow-xl"
-          >
-            <img src="img/rocketride.png" class="w-1/2 mb-6" />
-            <h3 class="text-3xl text-center text-slate-900 dark:text-white">
-              Adventurer
-            </h3>
-            <p
-              class="hidden sm:block text-3xl text-center mt-2 text-slate-500 dark:text-slate-400"
-            >
-              $$
-            </p>
-            <p
-              class="sm:hidden text-2xl text-center mt-2 text-slate-500 dark:text-slate-400"
-            >
-              Best Selling Rocket!!
-            </p>
-          </li>
-          <li
-            class="w-2/3 sm:w-5/6 flex flex-col items-center border border-solid border-slate-900 dark:bg-black dark:border-gray-100 bg-white py-6 px-2 rounded-3xl shadow-xl"
-          >
-            <img src="img/rocketlaunch.png" class="w-1/2 mb-6" />
-            <h3 class="text-3xl text-center text-slate-900 dark:text-white">
-              Infinity
-            </h3>
-            <p
-              class="hidden sm:block text-3xl text-center mt-2 text-slate-500 dark:text-slate-400"
-            >
-              $$$
-            </p>
-            <p
-              class="sm:hidden text-2xl text-center mt-2 text-slate-500 dark:text-slate-400"
-            >
-              Luxury starship
-            </p>
-          </li>
-        </ul>
-      </section>
-
-      <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
-
-      <section id="testimonials" class="p-6 my-12 scroll-mt-20">
-        <h2
-          class="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white"
-        >
-          Our testimonials
-        </h2>
-        <figure class="my-12">
-          <blockquote
-            class="bg-teal-600 dark:bg-black pl-14 pr-8 py-12 rounded-3xl relative"
-          >
-            <p
-              class="mt-2 text-left text-2xl text-white before:absolute before:top-0 before:left-0 before:translate-x-2 before:translate-y-2 before:transform before:font-serif before:text-9xl before:text-white before:opacity-25 before:content-['\201C'] after:absolute after:-bottom-20 after:right-0 after:-translate-x-2 after:-translate-y-2 after:transform after:font-serif after:text-9xl after:text-white after:opacity-25 after:content-['\201D'] dark:text-slate-400 sm:text-3xl"
-            >
-              Acme has always been there for me. Their Explorer rocket arrived
-              in a wooden crate as expected. Life-long customer! A++ shopping
-              experience.
-            </p>
-          </blockquote>
-          <figcaption
-            class="mt-2 text-right text-xl italic text-slate-500 dark:text-slate-400 sm:text-2xl"
-          >
-            &#8212; Wile E. Coyote, Genius
-          </figcaption>
-        </figure>
-        <figure class="my-12">
-          <blockquote
-            class="relative rounded-3xl bg-teal-600 py-12 pl-14 pr-8 dark:bg-black"
-          >
-            <p
-              class="mt-2 text-left text-2xl text-white before:absolute before:top-0 before:left-0 before:translate-x-2 before:translate-y-2 before:transform before:font-serif before:text-9xl before:text-white before:opacity-25 before:content-['\201C'] after:absolute after:-bottom-20 after:right-0 after:-translate-x-2 after:-translate-y-2 after:transform after:font-serif after:text-9xl after:text-white after:opacity-25 after:content-['\201D'] dark:text-slate-400 sm:text-3xl"
-            >
-              The Acme Adventurer Rocket has thwarted my Illudium Q-36 Explosive
-              Space Modulator on several occassions.
-              <span class="italic">This makes me very, very angry!</span>
-              Nevertheless, K-9 and I have awarded Acme the Martian contract for
-              space exploration rockets based on Acme's quality and sturdy
-              designs.
-            </p>
-          </blockquote>
-          <figcaption
-            class="mt-2 text-right text-xl italic text-slate-500 dark:text-slate-400 sm:text-2xl"
-          >
-            &#8212;Marvin The Martian &amp; K-9
-          </figcaption>
-        </figure>
-        <figure class="my-12">
-          <blockquote
-            class="relative rounded-3xl bg-teal-600 py-12 pl-14 pr-8 dark:bg-black"
-          >
-            <p
-              class="mt-2 text-left text-2xl text-white before:absolute before:top-0 before:left-0 before:translate-x-2 before:translate-y-2 before:transform before:font-serif before:text-9xl before:text-white before:opacity-25 before:content-['\201C'] after:absolute after:-bottom-20 after:right-0 after:-translate-x-2 after:-translate-y-2 after:transform after:font-serif after:text-9xl after:text-white after:opacity-25 after:content-['\201D'] dark:text-slate-400 sm:text-3xl"
-            >
-              I knew I not only wanted &#8212;
-              <span class="italic">I needed</span> &#8212; Acme's Infinity
-              Rocket for my mission in space. Acme delivered in one day! Nothing
-              says <q class="italic">Take me to your leader</q> like Acme's
-              Infinity Rocket! 💯
-            </p>
-          </blockquote>
-          <figcaption
-            class="mt-2 text-right text-xl italic text-slate-500 dark:text-slate-400 sm:text-2xl"
-          >
-            &#8212;Buzz Lightyear
-          </figcaption>
-        </figure>
-      </section>
-
-      <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
-
-      <section id="contact" class="p-6 my-12 scroll-mt-20">
-        <h2
-          class="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white"
-        >
-          Contact Us
-        </h2>
-        <form
-          action=""
-          class="max-w-4xl mx-auto text-2xl sm:text-3xl flex flex-col items-start gap-4"
-        >
-          <label for="subject" class="dark:text-white">Subject</label>
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            required
-            autocomplete="on"
-            minlength="3"
-            maxlength="60"
-            placeholder="Your Subject"
-            class="w-full text-black text-2xl sm:text-3xl p-2 rounded-xl border border-solid border-slate-900 dark:border-none"
-          />
-          <label class="dark:text-white" for="message">Message:</label>
-          <textarea
-            name="message"
-            id="message"
-            cols="10"
-            rows="10"
-            placeholder="Your Message"
-            required
-            class="w-full text-black text-2xl sm:text-3xl p-2 rounded-xl border border-solid border-slate-900 dark:border-none"
-          ></textarea>
-          <button
-            class="bg-teal-700 hover:bg-teal-600 active:bg-teal-500 text-white p-3 w-48 rounded border border-solid border-slate-900 dark:border-none"
-          >
-            Submit
-          </button>
-        </form>
-      </section>
-    </main>
-
-    <footer id="footer" class="bg-teal-700 text-white text-xl">
-      <section
-        class="max-w-4xl mx-auto p-4 flex flex-col sm:flex-row sm:justify-between"
-      >
-        <address>
-          <h2>Acme Rocket-Powered Products, Inc.</h2>
-          555 Astro Way<br />
-          Fairfield, New Jersey 12345-5555<br />
-          Email:
-          <a href="mailto:inquiries@acmerockets.com">Inquires@AcmeRockets.com</a
-          ><br />
-          Phone: <a href="tel:+15555555555">(555) 555-5555</a>
-        </address>
-        <nav class="hidden md:flex flex-col gap-2" aria-label="footer">
-          <a href="#rockets" class="hover:opacity-90">Our Rockets</a>
-          <a href="#testimonials" class="hover:opacity-90">Testimonials</a>
+<body class="min-h-screen bg-slate-100 dark:bg-black dark:text">
+  <header class="bg-teal-700 text-white sticky top-0 z-10">
+    <section class="max-w-4xl mx-auto p-4 flex justify-between items-center">
+      <h1 class="text-4xl font-medium"><a href="#hero">MedQuest</a></h1>
+      <div>
+        <button class="text-3xl md:hidden cursor-pointer relative w-8 h-8" id="hamburger-button">
+          <!-- &#9776; -->
+          <div
+            class="bg-white w-8 h-1 rounded absolute top-4 -mt-0.5 before:content-[''] transition-all duration-500 before:bg-white before:w-8 before:h-1 before:rounded before:absolute before:-translate-x-4 before:-translate-y-3 before:transition-all before:duration-500 after:content-[''] after:bg-white after:w-8 after:h-1 after:rounded after:absolute after:transition-all after:duration-500 after:-translate-x-4 after:translate-y-3">
+          </div>
+        </button>
+        <nav class="hidden md:block space-x-8 text-xl" arial-label="main">
+          <a href="#rockets" class="hover:opacity-90">Portals</a>
+          <a href="#invoice" class="hover:opacity-90">Invoice</a>
           <a href="#contact" class="hover:opacity-90">Contact Us</a>
+          <a href="#policy" class="hover:opacity-90">policy</a>
         </nav>
-        <div class="flex flex-col sm:gap-2">
-          <p class="text-right">Copyright &copy; <span id="year">2022</span></p>
-          <p class="text-right">All Rights Reserved</p>
+      </div>
+    </section>
+    <section id="mobile-menu"
+      class="absolute top-68 bg-black w-full text-5xl flex-col justify-content-center origin-top animate-open-menu hidden">
+      <nav class="flex flex-col min-h-screen item-center py-8" aria-label="mobile">
+        <a href="#hero" class="w-full text-center py-6 hover:opacity-90">Home</a>
+        <a href="#rockets" class="w-full text-center py-6 hover:opacity-90">Portals</a>
+        <a href="#invoice" class="w-full text-center py-6 hover:opacity-90">Invoice</a>
+        <a href="#contact" class="w-full text-center py-6 hover:opacity-90">Contact Us</a>
+        <a href="#policy" class="w-full text-center py-6 hover:opacity-90">Policy</a>
+      </nav>
+    </section>
+  </header>
+  <main class="max-w-4xl mx-auto">
+    <section id="hero"
+      class="scroll-mt-40 flex flex-col-reverse justify-center sm:flex-row p-6 items-center gap-8 mb-12">
+      <article class="sm:w-1/2">
+        <h2 class="max-w-md text-4xl font-bold text-center sm:text-5xl sm:text-left text-slate-900 dark:text-white">
+          <span class="text-indigo-700 dark:text-indigo-300">Home Visit Available</span>
+
+        </h2>
+        <p class="max-w-md text-2xl mt-4 text-center sm:text-left text-slate-900 dark:text-white">
+          Fast and comprehensive tests
+        </p>
+        <p class="max-w-md text-2xl mt-4 text-center sm:text-left text-slate-900 dark:text-white">
+          Get yout samples collected from your doorstep
+        </p>
+      </article>
+      <img class="w-1/2" src="img/home-mobile.png" />
+    </section>
+
+    <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
+
+    <section class="p-6 my-12 scroll-mt-20">
+      <h2 class="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white">
+        Our Location
+      </h2>
+      <div class="w-full bg-teal-600 flex-row flex gap-2 rounded-md p-2">
+        <div class="mt-1">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"
+            class="w-[20px] h-[20px]">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+          </svg>
+
         </div>
-      </section>
-    </footer>
-  </body>
+        <div class="flex flex-col text-white">
+          <p>Aditya Birla Fashion & Retail Limited</p>
+          <p>91/3 By-Pass Road Ponmeni Post Madurai District TamilNadu-625016,India</p>
+          <div class="flex-row flex mt-2">
+            GSTIN: 33AAECP2371C1ZW
+
+
+            <span class="ml-5 flex-row flex gap-2"> <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+              </svg> 951340051</span>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+
+    <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
+
+
+    <section id="rockets" class="p-6 my-12 scroll-mt-20">
+      <h2 class="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white">
+        Our Portals </h2>
+      <ul class="list-none mx-auto my-12 flex flex-col sm:flex-row items-center gap-8">
+        <li
+          class="w-2/3 sm:w-5/6 flex flex-col items-center border border-solid border-slate-900 dark:bg-black dark:border-gray-100 bg-white py-6 px-2 rounded-3xl shadow-xl">
+
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-[40%]  mb-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+          </svg>
+
+          <h3 class="text-3xl text-slate-900 dark:text-white">Patient Portal</h3>
+          <p class="text-center sm:block text-1xl mt-2 text-slate-500 dark:text-slate-400">
+            Home Visit Booking, Tests Booking , Enquiries & Feedbacks
+          </p>
+          <!-- <p class="sm:hidden text-2xl mt-2 text-slate-500 dark:text-slate-400">
+            
+          </p> -->
+        </li>
+        <li
+          class="w-2/3 sm:w-5/6 flex flex-col items-center border border-solid border-slate-900 dark:bg-black dark:border-gray-100 bg-white py-6 px-2 rounded-3xl shadow-xl">
+
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-1/2 mb-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
+          </svg>
+
+          <h3 class="text-3xl text-center text-slate-900 dark:text-white">
+            Corporate Portal
+          </h3>
+          <p class="text-center sm:block text-1xl mt-2 text-slate-500 dark:text-slate-400">
+            View Employee Health Records
+          </p>
+          <!-- <p class="sm:hidden text-2xl text-center mt-2 text-slate-500 dark:text-slate-400">
+            Best Selling Rocket!!
+          </p> -->
+        </li>
+        <li
+          class="w-2/3 sm:w-5/6 flex flex-col items-center border border-solid border-slate-900 dark:bg-black dark:border-gray-100 bg-white py-6 px-2 rounded-3xl shadow-xl">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-1/2 mb-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+          </svg>
+
+          <h3 class="text-3xl text-center text-slate-900 dark:text-white">
+            Lab2Lab
+          </h3>
+          <p class=" sm:block text-1xl text-center mt-2 text-slate-500 dark:text-slate-400">
+            Your Preferred Lab Partner
+          </p>
+          <!-- <p class="sm:hidden text-2xl text-center mt-2 text-slate-500 dark:text-slate-400">
+            Luxury starship
+          </p> -->
+        </li>
+      </ul>
+    </section>
+
+    <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
+
+    <section class="p-6 my-12 scroll-mt-20">
+      <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <div class="numbertext"> 1/3</div>
+
+          <img src="img/image3.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <div class="numbertext"> 2/3</div>
+
+          <img src="img/image1.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3/3</div>
+          <img src="img/image2.jpg" style="width:100%">
+        </div>
+
+
+      </div>
+      <br>
+
+      <!-- The dots/circles -->
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    </section>
+
+    <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
+
+    <section id="invoice" class="p-6 my-12 scroll-mt-20">
+      <h2 class="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white">
+        Invoice
+      </h2>
+      <div class="flex flex-row justify-between bg-white p-5 rounded-1xl shadow-xl">
+        <div>
+          <p>Amount Paid</p>
+          <p>₹1,498.10</p>
+        </div>
+        <div>
+          <p>23-02-2024</p>
+          <p>Qty 3</p>
+        </div>
+      </div>
+
+      <p class="mt-3"><span class="font-bold">Invoice</span> #P380302I23508094
+      </p>
+
+      <div class="bg-white p-5 rounded-1xl shadow-xl mt-3 flex flex-col gap-2">
+        <div class="flex flex-row gap-2">
+          <p>1.</p>
+          <div class="flex flex-col  w-full gap-2">
+            <div class="flex justify-between ">
+              <div>
+                PTBF POLO
+              </div>
+              <div>
+                <p>₹799.00</p>
+              </div>
+            </div>
+            <p class="font-[400] text-[12px] ">
+              MRP: ₹799.00 Quantity : 1 GST: 38.04
+            </p>
+            <div class="flex justify-between ">
+              <div>
+                Net amount
+              </div>
+              <div>
+                <p>₹799.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="mx-auto w-full bg-black dark:bg-white" />
+        <div class="flex flex-row gap-2">
+          <p>2.</p>
+          <div class="flex flex-col  w-full gap-2">
+            <div class="flex justify-between ">
+              <div>
+                PTBF POLO
+              </div>
+              <div>
+                <p>₹799.00</p>
+              </div>
+            </div>
+            <p class="font-[400] text-[12px] ">
+              MRP: ₹799.00 Quantity : 1 GST: 38.04
+            </p>
+            <div class="flex justify-between ">
+              <div>
+                Net amount
+              </div>
+              <div>
+                <p>₹799.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="mx-auto w-full bg-black dark:bg-white" />
+
+
+
+        <div x-data="{ reportsOpen: false }">
+          <div class='w-full items-center space-y-6'>
+
+            <div @click="reportsOpen = !reportsOpen"
+              class='flex items-center text-gray-600 w-full mt-0 justify-center  overflow-hidden mt-32 md:mt-0 mb-5 mx-auto'>
+              <div class='w-10  px-2 transform transition duration-300  ease-in-out'
+                :class="{'rotate-180': reportsOpen,' -translate-y-0.0': !reportsOpen }">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </div>
+
+            </div>
+
+            <div class="flex p-5 md:p-0 w-full transform transition duration-300 ease-in-out  pb-10" x-cloak
+              x-show="reportsOpen" x-collapse x-collapse.duration.500ms>
+              <div class="flex flex-col gap-2 w-full">
+                <div class="flex flex-row gap-2">
+                  <p>3.</p>
+                  <div class="flex flex-col  w-full gap-2">
+                    <div class="flex justify-between ">
+                      <div>
+                        PTBF POLO
+                      </div>
+                      <div>
+                        <p>₹799.00</p>
+                      </div>
+                    </div>
+                    <p class="font-[400] text-[12px] ">
+                      MRP: ₹799.00 Quantity : 1 GST: 38.04
+                    </p>
+                    <div class="flex justify-between ">
+                      <div>
+                        Discount (98.57%)
+                      </div>
+                      <div>
+                        <p>-₹6.90</p>
+                      </div>
+                    </div>
+                    <div class="flex justify-between ">
+                      <div>
+                        Net amount
+                      </div>
+                      <div>
+                        <p>₹0.10</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <hr class="mx-auto w-full bg-black dark:bg-white" />
+
+                <div class="flex justify-between ">
+                  <div>
+
+                    Total Saving
+                  </div>
+                  <div>
+                    <p>₹6.90</p>
+                  </div>
+                </div>
+                <div class="flex justify-between ">
+                  <div>
+                    Total Amount Paid
+                  </div>
+                  <div>
+                    <p>₹1,498.10</p>
+                  </div>
+                </div>
+                <div>
+                  <p class="font-bold">Tender</p>
+                  <div class="flex justify-between ">
+                    <div>
+
+                      Innoviti Card
+                    </div>
+                    <div>
+                      <p>₹1,498.10</p>
+                    </div>
+                  </div>
+                  <div class="flex justify-between ">
+                    <div>
+
+                      Transaction ref. no.
+                    </div>
+                    <div>
+                      <p class="w-52 text-right">P380-P380302-1708675111847 L: 1</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- tablellllllllllllllllllllllllllllllll -->
+                <div>
+                  <p class="font-bold">Tax Summary</p>
+                  <div class="bg-[#d3d3d3] mt-3 p-3">
+                    <table class="border-collapse w-full border-none">
+                      <thead>
+                        <tr>
+                          <th>Tax </th>
+                          <th>Taxable Amt</th>
+                          <th>Rate</th>
+                          <th>Tax Amount</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="w-full text-center">
+                          <td>CGST </td>
+                          <td>₹1,426.66</td>
+                          <td>2.50%</td>
+                          <td>₹35.66</td>
+                        </tr>
+                        <tr class="w-full text-center">
+                          <td>SGST </td>
+                          <td>₹1,426.66</td>
+                          <td>2.50%</td>
+                          <td>₹35.66</td>
+                        </tr>
+                        <tr class="w-full text-center">
+                          <td>CGST </td>
+                          <td>₹0.08</td>
+                          <td>9.00%</td>
+                          <td>₹0.01</td>
+                        </tr>
+                        <tr class="w-full text-center">
+                          <td>SGST </td>
+                          <td>₹0.08</td>
+                          <td>9.00%</td>
+                          <td>₹0.01</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
+
+    <section id="send-invoice" class="p-6 my-12 scroll-mt-20">
+      <div class="flex flex-col justify-between bg-white p-5 rounded-1xl shadow-xl">
+        <div class="w-full bg-teal-600 flex p-4 justify-center items-center">
+          <p class="text-white font-[500]">Download Invoice</p>
+        </div>
+        <p class="text-center mt-2">- Or Send invoice to your email -</p>
+        <div class="flex flex-row mt-2 gap-8 ">
+          <input class="w-full border-[1px] p-2" type="email" placeholder="Enter your email address here" />
+          <div class="bg-teal-600 px-5 justify-center flex items-center ">
+            <p class="text-white">Send</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
+
+    <section id="policy" class="p-6  scroll-mt-20">
+      <h2 class="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white">
+        Our Policy
+      </h2>
+      <div x-data="{ reportsOpen: false }" class="p-6 my-12 scroll-mt-20">
+
+        <div @click="reportsOpen = !reportsOpen"
+          class='flex items-center bg-teal-600 text-gray-600 w-full  overflow-hidden mt-32 md:mt-0 mx-auto'>
+          <div class='w-10  border-r px-2 transform transition duration-300 ease-in-out'
+            :class="{'rotate-90': reportsOpen,' -translate-y-0.0': !reportsOpen }">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"
+              class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+          </div>
+          <div class='flex items-center px-2 py-3'>
+            <div class='mx-3'>
+              <button class="hover:underline text-white"> Exchange Policy and Other T&C </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex p-5 md:p-6 bg-teal-600 w-full transform transition duration-300 ease-in-out border-b " x-cloak
+          x-show="reportsOpen" x-collapse x-collapse.duration.500ms>
+          <ol class="text-white">
+            <li class="list-disc">Your purchase are guaranteed against all manufacturing defects.</li>
+            <li class="list-disc">
+              We will accept exchanges within 30 days of purchase, only if the
+              Sales Invoice is presented along with the merchandise.
+            </li>
+            <li class="list-disc">
+              All merchandise which needs to be exchanged should be in its
+              original condition along with the barcode tags intact.
+            </li>
+            <li class="list-disc">
+              GST invoice for Input tax credit are not allowed for return and
+              exchange.
+            </li>
+            <li class="list-disc">
+              Purchases during EOSS / SALE can only be exchanged during same
+              EOSS I SALE period.
+            </li>
+          </ol>
+        </div>
+
+      </div>
+    </section>
+    <!-- <hr class="mx-auto w-1/2 bg-black dark:bg-white" /> -->
+
+
+    <!-- <section id="testimonials" class="p-6 scroll-mt-20">
+      <h2 class="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white">
+        Our testimonials
+      </h2>
+      <figure class="my-12">
+        <blockquote class="bg-teal-600 dark:bg-black pl-14 pr-8 py-12 rounded-3xl relative">
+          <p
+            class="mt-2 text-left text-2xl text-white before:absolute before:top-0 before:left-0 before:translate-x-2 before:translate-y-2 before:transform before:font-serif before:text-9xl before:text-white before:opacity-25 before:content-['\201C'] after:absolute after:-bottom-20 after:right-0 after:-translate-x-2 after:-translate-y-2 after:transform after:font-serif after:text-9xl after:text-white after:opacity-25 after:content-['\201D'] dark:text-slate-400 sm:text-3xl">
+            Acme has always been there for me. Their Explorer rocket arrived
+            in a wooden crate as expected. Life-long customer! A++ shopping
+            experience.
+          </p>
+        </blockquote>
+        <figcaption class="mt-2 text-right text-xl italic text-slate-500 dark:text-slate-400 sm:text-2xl">
+          &#8212; Wile E. Coyote, Genius
+        </figcaption>
+      </figure>
+      <figure class="my-12">
+        <blockquote class="relative rounded-3xl bg-teal-600 py-12 pl-14 pr-8 dark:bg-black">
+          <p
+            class="mt-2 text-left text-2xl text-white before:absolute before:top-0 before:left-0 before:translate-x-2 before:translate-y-2 before:transform before:font-serif before:text-9xl before:text-white before:opacity-25 before:content-['\201C'] after:absolute after:-bottom-20 after:right-0 after:-translate-x-2 after:-translate-y-2 after:transform after:font-serif after:text-9xl after:text-white after:opacity-25 after:content-['\201D'] dark:text-slate-400 sm:text-3xl">
+            The Acme Adventurer Rocket has thwarted my Illudium Q-36 Explosive
+            Space Modulator on several occassions.
+            <span class="italic">This makes me very, very angry!</span>
+            Nevertheless, K-9 and I have awarded Acme the Martian contract for
+            space exploration rockets based on Acme's quality and sturdy
+            designs.
+          </p>
+        </blockquote>
+        <figcaption class="mt-2 text-right text-xl italic text-slate-500 dark:text-slate-400 sm:text-2xl">
+          &#8212;Marvin The Martian &amp; K-9
+        </figcaption>
+      </figure>
+      <figure class="my-12">
+        <blockquote class="relative rounded-3xl bg-teal-600 py-12 pl-14 pr-8 dark:bg-black">
+          <p
+            class="mt-2 text-left text-2xl text-white before:absolute before:top-0 before:left-0 before:translate-x-2 before:translate-y-2 before:transform before:font-serif before:text-9xl before:text-white before:opacity-25 before:content-['\201C'] after:absolute after:-bottom-20 after:right-0 after:-translate-x-2 after:-translate-y-2 after:transform after:font-serif after:text-9xl after:text-white after:opacity-25 after:content-['\201D'] dark:text-slate-400 sm:text-3xl">
+            I knew I not only wanted &#8212;
+            <span class="italic">I needed</span> &#8212; Acme's Infinity
+            Rocket for my mission in space. Acme delivered in one day! Nothing
+            says <q class="italic">Take me to your leader</q> like Acme's
+            Infinity Rocket! 💯
+          </p>
+        </blockquote>
+        <figcaption class="mt-2 text-right text-xl italic text-slate-500 dark:text-slate-400 sm:text-2xl">
+          &#8212;Buzz Lightyear
+        </figcaption>
+      </figure>
+    </section> -->
+
+    <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
+
+    <section id="contact" class="p-6 my-12 scroll-mt-20">
+      <h2 class="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white">
+        Contact Us
+      </h2>
+      <!-- <form action="" class="max-w-4xl mx-auto text-2xl sm:text-3xl flex flex-col items-start gap-4">
+        <label for="subject" class="dark:text-white">Subject</label>
+        <input type="text" id="subject" name="subject" required autocomplete="on" minlength="3" maxlength="60"
+          placeholder="Your Subject"
+          class="w-full text-black text-2xl sm:text-3xl p-2 rounded-xl border border-solid border-slate-900 dark:border-none" />
+        <label class="dark:text-white" for="message">Message:</label>
+        <textarea name="message" id="message" cols="10" rows="10" placeholder="Your Message" required
+          class="w-full text-black text-2xl sm:text-3xl p-2 rounded-xl border border-solid border-slate-900 dark:border-none"></textarea>
+        <button
+          class="bg-teal-600 hover:bg-teal-600 active:bg-teal-500 text-white p-3 w-48 rounded border border-solid border-slate-900 dark:border-none">
+          Submit
+        </button>
+      </form> -->
+
+      <div class="flex flex-col bg-white p-5 rounded-1xl shadow-xl">
+        <div class="flex flex-row gap-4">
+          <img src="./img/facebook.png" class="w-[80px] h-[80px]" />
+          <img src="./img/insta.png" class="w-[80px] h-[80px]" />
+          <img src="./img/youtube.png" class="w-[80px] h-[80px]" />
+        </div>
+        <p>Find us on your favorite social media</p>
+      </div>
+
+    </section>
+
+    <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
+
+    <section class="p-6 my-12 scroll-mt-20">
+      <div class="flex flex-row justify-between items-center bg-white p-5 rounded-1xl shadow-xl">
+
+        <div>
+          <p class="font-bold">Never be Out of touch on Fashion</p>
+          <p>Download the MedQuest app</p>
+        </div>
+        <div class="px-5 bg-teal-600 text-white py-2 rounded-3xl">
+          <p>Download Now</p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer id="footer" class="bg-teal-600 text-white text-xl">
+    <section class="justify-center items-center mx-auto p-4 flex flex-col ">
+
+      We hope you have enjoyed your experience
+      Email:
+      <a href="mailto:customercare@abfrl.adityabirla.com">customercare@abfrl.adityabirla.com</a>
+      <a href="tel:1800-103-7527">1800-103-7527 (11AM to 9:30 PM)</a>
+
+      <address class="text-center">
+        Corporate Address<br />
+        Piramal Agastya Corporate Park, Bldg"A", 4th & 5th Flr, LBS Road, Kurla Mumbai-<br />400070 Maharashtra, India
+      </address>
+      <p>CIN: L18101MH2007PLC233901</p>
+      <image src="./img/logo.png" />
+    </section>
+  </footer>
+</body>
+
 </html>
